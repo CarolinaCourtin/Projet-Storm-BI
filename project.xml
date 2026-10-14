@@ -1,0 +1,25 @@
+<SXmlObject SXmlObjectTYPE="project" SXmlObjectSEQ="1" SXmlObjectID="e-commerce-fashion">
+  <data>
+    <repository>
+      <id>core</id>
+      <path>core</path>
+    </repository>
+    <repository>
+      <id>business</id>
+      <path>business</path>
+    </repository>
+  </data>
+  <login>
+    <enabled>true</enabled>
+    <user>storm</user>
+  </login>
+  <db>
+    <engine>mysql</engine>
+    <driver>QMYSQL</driver>
+    <host>127.0.0.1</host>
+    <port>3306</port>
+    <schema>e-commerce</schema>
+    <user>root</user>
+    <pass>BltepzLycIlQudOBuyMc/d6uCZeNM8Ss2WRWDwshihFRC3PEupghiyCGGc9eKL1nLyBL3YQmbka2IojqCQdHKnfMPc2lRwyggOSF3yGEe5OsM9ac2G5vFOJlZg4+xjzvj4G9M9H8821kQPzgF1GWQITXMYexX8VFvbJmTd5IaQf2tMnMnDNG1hmW8jE2X/8y</pass>
+  </db>
+</SXmlObject>

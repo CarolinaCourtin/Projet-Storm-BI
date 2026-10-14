@@ -1,0 +1,18 @@
+<storm>
+  <SXmlObject SXmlObjectTYPE="startmenu" SXmlObjectSEQ="2" alias="All" SXmlObjectID="STARTMENU_START">
+    <repository>core</repository>
+    <alias>All</alias>
+    <node enabled="false" alias="O" SXmlObjectID="O">
+      <node dashboard="DASHBOARD_ORDER_ITEMS"/>
+    </node>
+    <node enabled="false" alias="S" SXmlObjectID="S">
+      <node dashboard="DASHBOARD_SALES"/>
+    </node>
+    <node enabled="false" alias="U" SXmlObjectID="U">
+      <node dashboard="DASHBOARD_USER_BEHAVIOUR"/>
+    </node>
+    <node dashboard="DASHBOARD_ORDER_ITEMS"/>
+    <node dashboard="DASHBOARD_SALES"/>
+    <node dashboard="DASHBOARD_USER_BEHAVIOUR"/>
+  </SXmlObject>
+</storm>

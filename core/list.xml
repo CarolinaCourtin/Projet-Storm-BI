@@ -1,0 +1,257 @@
+<storm>
+  <SXmlObject SXmlObjectTYPE="list" SXmlObjectSEQ="1" SXmlObjectID="LIST_USER_BEHAVIOUR">
+    <repository>core</repository>
+    <alias>User behaviour</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <dataFilter><![CDATA[[
+    {
+        "factor": ""
+    }
+]
+]]></dataFilter>
+    <columnset>
+      <factor>COUNTRY_CODE_PTR_COUNTRIES</factor>
+      <factor>USER_ID_PTR_USERS</factor>
+      <factor>FOLLOWERS</factor>
+    </columnset>
+    <sort>
+      <sort>
+        <factor>COUNTRY_CODE</factor>
+        <breakLine>true</breakLine>
+      </sort>
+    </sort>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="list" SXmlObjectSEQ="5" SXmlObjectID="LIST_MAX_FOLLOWERS_BY_COUNTRY">
+    <repository>core</repository>
+    <alias>Average products listed by countries</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <dataFilter><![CDATA[[
+    {
+        "factor": ""
+    }
+]
+]]></dataFilter>
+    <columnset>
+      <factor>COUNTRY_NAME</factor>
+      <factor>USER_ID_PTR_USERS</factor>
+      <factor>etsttavg</factor>
+    </columnset>
+    <sort>
+      <sort>
+        <factor>COUNTRY_CODE</factor>
+        <breakLine>true</breakLine>
+      </sort>
+    </sort>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="list" SXmlObjectSEQ="40" SXmlObjectID="LIST_ALL_USER_BEHAVIOUR">
+    <repository>core</repository>
+    <alias>All data list</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <owner>storm</owner>
+    <columnset>
+      <factor>USER_BEHAVIOUR_ID</factor>
+      <factor>USER_ID</factor>
+      <factor>USERNAME</factor>
+      <factor>COUNTRY_CODE</factor>
+      <factor>COUNTRY_NAME</factor>
+      <factor>GENDER</factor>
+      <factor>FOLLOWERS</factor>
+      <factor>FOLLOWSS</factor>
+      <factor>PRODUCTS_LIST</factor>
+      <factor>PRODUCTS_SOLD</factor>
+      <factor>BALANCE</factor>
+    </columnset>
+    <sort/>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="list" SXmlObjectID="LIST_ORDER_ITEMS">
+    <repository>core</repository>
+    <alias>Order items</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <dataFilter><![CDATA[[
+    {
+        "factor": ""
+    }
+]
+]]></dataFilter>
+    <columnset>
+      <factor>ID_ORDER_ITEM</factor>
+      <factor>ID_SALE</factor>
+      <factor>PRODUCT_ID</factor>
+      <factor>PRODUCT_ID_PTR_PRODUCTS</factor>
+      <factor>DATE_SALE</factor>
+    </columnset>
+    <sort/>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="list" SXmlObjectSEQ="26" SXmlObjectID="LIST_ORDER_ITEMS_1">
+    <repository>core</repository>
+    <alias>Order items</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <dataFilter><![CDATA[[
+    {
+        "factor": ""
+    }
+]
+]]></dataFilter>
+    <columnset>
+      <factor>ID_SALE</factor>
+      <factor>PRODUCT_ID</factor>
+      <factor>PRICE</factor>
+      <factor>FEES</factor>
+    </columnset>
+    <sort>
+      <sort>
+        <factor>PRICE_WITH_DELIVERY_FEES</factor>
+        <descending>true</descending>
+      </sort>
+    </sort>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="list" SXmlObjectSEQ="1" SXmlObjectID="LIST_ORDER_ITEMS_2">
+    <repository>core</repository>
+    <alias>Order items</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <dataFilter><![CDATA[[
+    {
+        "factor": ""
+    }
+]
+]]></dataFilter>
+    <columnset>
+      <factor>ID_ORDER_ITEM</factor>
+      <factor>ID_SALE</factor>
+      <factor>PRODUCT_ID</factor>
+      <factor>PRODUCT_TYPE</factor>
+      <factor>PRICE</factor>
+      <factor>BRAND</factor>
+    </columnset>
+    <sort/>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="list" SXmlObjectSEQ="2" SXmlObjectID="LIST_SALES">
+    <repository>core</repository>
+    <alias>Sales</alias>
+    <parentID>DATASET_SALES</parentID>
+    <dataFilter><![CDATA[[
+    {
+        "factor": ""
+    }
+]
+]]></dataFilter>
+    <columnset>
+      <factor>ID_SALE</factor>
+      <factor>DATE_SALE</factor>
+      <factor>USER_ID</factor>
+      <factor>USERNAME</factor>
+    </columnset>
+    <sort/>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="list" SXmlObjectSEQ="1" SXmlObjectID="LIST_ORDER_ITEMS_3">
+    <repository>core</repository>
+    <alias>Order items</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <dataFilter><![CDATA[[
+    {
+        "factor": ""
+    }
+]
+]]></dataFilter>
+    <columnset>
+      <factor>ID_ORDER_ITEM</factor>
+      <factor>ID_SALE</factor>
+      <factor>PRODUCT_ID</factor>
+      <factor>PRODUCT_TYPE</factor>
+      <factor>BRAND</factor>
+      <factor>PRICE</factor>
+    </columnset>
+    <sort/>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="list" SXmlObjectSEQ="13" SXmlObjectID="LIST_ALL_ORDERS">
+    <repository>core</repository>
+    <alias>Orders numbers by brands</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <owner>storm</owner>
+    <dataFilter><![CDATA[[
+    {
+        "factor": ""
+    }
+]
+]]></dataFilter>
+    <columnset>
+      <factor>ID_ORDER_ITEM</factor>
+      <factor>ID_SALE</factor>
+      <factor>PRODUCT_ID</factor>
+      <factor>DATE_SALE</factor>
+      <factor>PRODUCT_TYPE</factor>
+      <factor>BRAND</factor>
+      <factor>PRICE</factor>
+      <factor>FEES</factor>
+    </columnset>
+    <sort>
+      <sort>
+        <factor>BRAND</factor>
+        <breakLine>true</breakLine>
+      </sort>
+    </sort>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="list" SXmlObjectSEQ="3" SXmlObjectID="LIST_SALES_BY_SEASON">
+    <repository>core</repository>
+    <alias>Count of sales by season</alias>
+    <parentID>DATASET_SALES</parentID>
+    <owner>storm</owner>
+    <dataFilter><![CDATA[[
+    {
+        "factor": ""
+    }
+]
+]]></dataFilter>
+    <columnset>
+      <factor>ID_SALE</factor>
+      <factor>DATE_SALE</factor>
+      <factor>USER_ID</factor>
+      <factor>USERNAME</factor>
+      <factor>DATE_SALE_DATE_SEASON</factor>
+    </columnset>
+    <sort>
+      <sort>
+        <factor>DATE_SALE_DATE_SEASON</factor>
+        <breakLine>true</breakLine>
+      </sort>
+    </sort>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="list" SXmlObjectSEQ="4" SXmlObjectID="LIST_SALES_BY_YEAR">
+    <repository>core</repository>
+    <alias>Count of sales by year</alias>
+    <parentID>DATASET_SALES</parentID>
+    <owner>storm</owner>
+    <dataFilter><![CDATA[[
+    {
+        "factor": ""
+    }
+]
+]]></dataFilter>
+    <columnset>
+      <factor>ID_SALE</factor>
+      <factor>DATE_SALE</factor>
+      <factor>USER_ID</factor>
+      <factor>USERNAME</factor>
+      <factor>DATE_SALE_DATE_YEAR</factor>
+    </columnset>
+    <sort>
+      <sort>
+        <factor>DATE_SALE_DATE_YEAR</factor>
+        <breakLine>true</breakLine>
+      </sort>
+    </sort>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="list" SXmlObjectSEQ="1" SXmlObjectID="LIST_ALL_SALES">
+    <repository>core</repository>
+    <alias>All sales</alias>
+    <parentID>DATASET_SALES</parentID>
+    <owner>storm</owner>
+    <columnset>
+      <factor>ID_SALE</factor>
+      <factor>DATE_SALE</factor>
+      <factor>USER_ID</factor>
+      <factor>USERNAME</factor>
+    </columnset>
+    <sort/>
+  </SXmlObject>
+</storm>

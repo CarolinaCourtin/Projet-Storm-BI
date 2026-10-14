@@ -1,0 +1,54 @@
+<storm>
+  <SXmlObject SXmlObjectTYPE="style" SXmlObjectID="STYLE_DATETIME">
+    <repository>core</repository>
+    <textAlign>left</textAlign>
+    <foregroundColor>#3A3A3A</foregroundColor>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="style" SXmlObjectID="STYLE_DECIMAL">
+    <repository>core</repository>
+    <textAlign>right</textAlign>
+    <numericPrecision>2</numericPrecision>
+    <foregroundColor>#4169E1</foregroundColor>
+    <foregroundPositive>#000000</foregroundPositive>
+    <foregroundNegative>#FF0000</foregroundNegative>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="style" SXmlObjectID="STYLE_INTEGER">
+    <repository>core</repository>
+    <textAlign>right</textAlign>
+    <numericPrecision>0</numericPrecision>
+    <foregroundColor>#4169E1</foregroundColor>
+    <foregroundPositive>#000000</foregroundPositive>
+    <foregroundNegative>#FF0000</foregroundNegative>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="style" SXmlObjectID="STYLE_PIVOT">
+    <repository>core</repository>
+    <textAlign>right</textAlign>
+    <numericPrecision>2</numericPrecision>
+    <foregroundColor>#006EB7</foregroundColor>
+    <foregroundPositive>#000000</foregroundPositive>
+    <foregroundNegative>#FF0000</foregroundNegative>
+    <backgroundColor>#CCDEEC</backgroundColor>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="style" SXmlObjectID="STYLE_PK">
+    <repository>core</repository>
+    <textAlign>right</textAlign>
+    <numericPrecision>0</numericPrecision>
+    <foregroundColor>#4169E1</foregroundColor>
+    <backgroundColor>#CCDEEC</backgroundColor>
+    <font>
+      <bold>true</bold>
+      <underline>true</underline>
+    </font>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="style" SXmlObjectID="STYLE_POINTER">
+    <repository>core</repository>
+    <textAlign>left</textAlign>
+    <numericPrecision>2</numericPrecision>
+    <foregroundColor>#696969</foregroundColor>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="style" SXmlObjectID="STYLE_STRING">
+    <repository>core</repository>
+    <textAlign>left</textAlign>
+    <foregroundColor>#0000FF</foregroundColor>
+  </SXmlObject>
+</storm>

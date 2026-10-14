@@ -1,0 +1,40 @@
+<storm>
+  <SXmlObject SXmlObjectTYPE="chart" SXmlObjectID="CHART_MALE_FEMALE">
+    <repository>core</repository>
+    <alias>Repartition male and female</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <owner>storm</owner>
+    <xAxis>
+      <dimension>GENDER</dimension>
+      <type>category</type>
+      <sort>alpha-down</sort>
+    </xAxis>
+    <legend>
+      <layout>horizontal</layout>
+    </legend>
+    <series>
+      <value>
+        <type>pie</type>
+        <factor>GENDER</factor>
+        <function>COUNT</function>
+      </value>
+    </series>
+    <annotations>
+      <data><![CDATA[[
+  {
+    "labels": [
+      {
+        "point": {
+          "x": 1,
+          "y": 1
+        },
+        "text": "Some free text",
+        "backgroundColor": "darkgray",
+        "borderColor": "lightgray"
+      }
+    ]
+  }
+]]]></data>
+    </annotations>
+  </SXmlObject>
+</storm>

@@ -1,0 +1,92 @@
+<storm>
+  <SXmlObject SXmlObjectTYPE="kpi" SXmlObjectSEQ="1" SXmlObjectID="KPI_USER_COUNT">
+    <repository>core</repository>
+    <alias>Number of users</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <owner>storm</owner>
+    <factor>USER_BEHAVIOUR_ID</factor>
+    <expression>COUNT</expression>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="kpi" SXmlObjectID="KPI_PRODUCTS_SOLD">
+    <repository>core</repository>
+    <alias>Total of sold products</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <owner>storm</owner>
+    <factor>PRODUCTS_SOLD</factor>
+    <expression>SUM</expression>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="kpi" SXmlObjectSEQ="5" SXmlObjectID="KPI_EXP_ITEM">
+    <repository>core</repository>
+    <alias>Most expensive item</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <owner>storm</owner>
+    <factor>PRICE</factor>
+    <expression>MAX</expression>
+    <background>#aaaaff</background>
+    <foreground>#aaaaff</foreground>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="kpi" SXmlObjectSEQ="2" SXmlObjectID="KPI_LAST_ORDER">
+    <repository>core</repository>
+    <alias>Last Order</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <owner>storm</owner>
+    <factor>DATE_SALE</factor>
+    <expression>MAX</expression>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="kpi" SXmlObjectSEQ="1" SXmlObjectID="COUNT_USER_SALE">
+    <repository>core</repository>
+    <alias>Count of users who have made a purchase</alias>
+    <parentID>DATASET_SALES</parentID>
+    <owner>storm</owner>
+    <factor>USER_ID</factor>
+    <expression>COUNT</expression>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="kpi" SXmlObjectSEQ="1" SXmlObjectID="KPI_MOST_PURCHASED_BRAND">
+    <repository>core</repository>
+    <alias>Most purchased brand</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <owner>storm</owner>
+    <factor>ID_ORDER_ITEM, BRAND</factor>
+    <expression>MAX</expression>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="kpi" SXmlObjectSEQ="1" SXmlObjectID="KPI_ORDER_ITEMS_TOTAL_PRICE">
+    <repository>core</repository>
+    <alias>Total price</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <owner>storm</owner>
+    <factor>PRICE</factor>
+    <expression>SUM</expression>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="kpi" SXmlObjectSEQ="1" SXmlObjectID="KPI_ORDER_ITEMS_AVG_FEES">
+    <repository>core</repository>
+    <alias>Average fees</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <owner>storm</owner>
+    <factor>FEES</factor>
+    <expression>AVG</expression>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="kpi" SXmlObjectSEQ="2" SXmlObjectID="KPI_ORDER_ITEMS_VG_FEE">
+    <repository>core</repository>
+    <alias>Average fees</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <owner>storm</owner>
+    <factor>FEES</factor>
+    <expression>AVG</expression>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="kpi" SXmlObjectSEQ="1" SXmlObjectID="KPI_ORDER_ITEMS_TOTAL_ORDERS">
+    <repository>core</repository>
+    <alias>Total numbers of orders</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <owner>storm</owner>
+    <factor>ID_ORDER_ITEM</factor>
+    <expression>COUNT</expression>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="kpi" SXmlObjectSEQ="1" SXmlObjectID="KPI_ORDER_ITEMS_TOTAL_PRICES">
+    <repository>core</repository>
+    <alias>Sum of all prices sold</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <owner>storm</owner>
+    <factor>PRICE</factor>
+    <expression>SUM</expression>
+  </SXmlObject>
+</storm>

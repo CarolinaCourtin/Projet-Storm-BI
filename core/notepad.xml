@@ -1,0 +1,9 @@
+<storm>
+  <SXmlObject SXmlObjectTYPE="notepad" SXmlObjectID="notes_user_behaviour">
+    <repository>core</repository>
+    <alias>Note</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <owner>storm</owner>
+    <text>Analyse du comportement des clients sur le site</text>
+  </SXmlObject>
+</storm>

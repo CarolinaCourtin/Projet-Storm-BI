@@ -1,0 +1,87 @@
+<storm>
+  <SXmlObject SXmlObjectTYPE="pivotlist" SXmlObjectSEQ="31" SXmlObjectID="PIVOTLIST_AVG_FOLLOWERS_BY_COUNTRIES">
+    <repository>core</repository>
+    <alias>Average followers by countries</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <owner>storm</owner>
+    <dimension><![CDATA[["COUNTRY_NAME","USERNAME"]]]></dimension>
+    <columnset><![CDATA[["FOLLOWERS","FOLLOWSS","COMMUNITY"]]]></columnset>
+    <sortTree>
+      <factor>COUNTRY_NAME</factor>
+    </sortTree>
+    <sortTree>
+      <factor>USERNAME</factor>
+    </sortTree>
+    <sortRows>
+      <factor>FOLLOWERS</factor>
+    </sortRows>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="pivotlist" SXmlObjectSEQ="1" SXmlObjectID="PIVOTLIST_AVERAGE_FOLLOWERS_BY_COUNTRIES">
+    <repository>core</repository>
+    <alias>Average followers by countries</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <owner>storm</owner>
+    <dimension><![CDATA[["COUNTRY_NAME","USERNAME"]]]></dimension>
+    <columnset><![CDATA[["FOLLOWERS","FOLLOWSS","COMMUNITY"]]]></columnset>
+    <sortTree>
+      <factor>COUNTRY_NAME</factor>
+    </sortTree>
+    <sortTree>
+      <factor>USERNAME</factor>
+    </sortTree>
+    <sortRows>
+      <factor>USERNAME</factor>
+    </sortRows>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="pivotlist" SXmlObjectSEQ="2" SXmlObjectID="PIVOTLIST_AVERAGE_FOLLOWERS_BY_COUNTRIES_1">
+    <repository>core</repository>
+    <alias>Average followers by countries</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <owner>storm</owner>
+    <dimension><![CDATA[["COUNTRY_NAME","USERNAME"]]]></dimension>
+    <columnset><![CDATA[["AVG_FOLLOWERS","AVG_FOLLOWSS","COMMUNITY"]]]></columnset>
+    <sortTree>
+      <factor>COUNTRY_NAME</factor>
+    </sortTree>
+    <sortTree>
+      <factor>USERNAME</factor>
+    </sortTree>
+    <sortRows>
+      <factor>USERNAME</factor>
+    </sortRows>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="pivotlist" SXmlObjectSEQ="3" SXmlObjectID="PIVOTLIST_SALES_BY_BRAND_AND_PRODUCT_TYPE">
+    <repository>core</repository>
+    <alias>Sales by brand and product type</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <owner>storm</owner>
+    <dimension><![CDATA[["BRAND","PRODUCT_TYPE"]]]></dimension>
+    <columnset><![CDATA[["ID_ORDER_ITEM","DATE_SALE","PRICE"]]]></columnset>
+    <sortTree>
+      <factor>BRAND</factor>
+    </sortTree>
+    <sortTree>
+      <factor>PRODUCT_TYPE</factor>
+    </sortTree>
+    <sortRows>
+      <factor>PRODUCT_TYPE</factor>
+    </sortRows>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="pivotlist" SXmlObjectSEQ="2" SXmlObjectID="PIVOTLIST_ORDER_ITEMS_SUM_PRICES">
+    <repository>core</repository>
+    <alias>Sum of brands prices</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <owner>storm</owner>
+    <dimension><![CDATA[["BRAND","PRODUCT_TYPE"]]]></dimension>
+    <columnset>PRICE_SUM</columnset>
+    <sortTree>
+      <factor>BRAND</factor>
+    </sortTree>
+    <sortTree>
+      <factor>PRODUCT_TYPE</factor>
+    </sortTree>
+    <sortRows>
+      <factor>PRODUCT_TYPE</factor>
+    </sortRows>
+  </SXmlObject>
+</storm>

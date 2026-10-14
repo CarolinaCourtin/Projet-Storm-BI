@@ -1,0 +1,61 @@
+<storm>
+  <SXmlObject SXmlObjectTYPE="dataset" SXmlObjectID="DATASET_COUNTRIES">
+    <repository>core</repository>
+    <parentID>countries</parentID>
+    <defaultDashboard>DASHBOARD_COUNTRIES</defaultDashboard>
+    <queries>
+      <query>QUERY_COUNTRIES</query>
+    </queries>
+    <paramset><![CDATA[["PARAMSET_QUERY_LIMIT","PARAMSET_COUNTRIES"]]]></paramset>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="dataset" SXmlObjectID="DATASET_ORDER_ITEMS">
+    <repository>core</repository>
+    <parentID>order_items</parentID>
+    <defaultDashboard>DASHBOARD_ORDER_ITEMS</defaultDashboard>
+    <queries>
+      <query>QUERY_ORDER_ITEMS</query>
+    </queries>
+    <paramset><![CDATA[["PARAMSET_QUERY_LIMIT","PARAMSET_ORDER_ITEMS","PARAMSET_SALES"]]]></paramset>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="dataset" SXmlObjectID="DATASET_PRODUCTS">
+    <repository>core</repository>
+    <parentID>products</parentID>
+    <defaultDashboard>DASHBOARD_PRODUCTS</defaultDashboard>
+    <queries>
+      <query>QUERY_PRODUCTS</query>
+    </queries>
+    <paramset><![CDATA[["PARAMSET_QUERY_LIMIT","PARAMSET_PRODUCTS"]]]></paramset>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="dataset" SXmlObjectID="DATASET_SALES">
+    <repository>core</repository>
+    <parentID>sales</parentID>
+    <defaultDashboard>DASHBOARD_SALES</defaultDashboard>
+    <queries>
+      <query>QUERY_SALES</query>
+    </queries>
+    <paramset><![CDATA[["PARAMSET_QUERY_LIMIT","PARAMSET_SALES"]]]></paramset>
+    <drilldown>
+      <UID>{c68e26d8-115e-4b5b-a921-34279777ce19}</UID>
+      <dataset>DATASET_ORDER_ITEMS</dataset>
+      <link>id_sale:order_items.id_sale</link>
+    </drilldown>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="dataset" SXmlObjectID="DATASET_USERS">
+    <repository>core</repository>
+    <parentID>users</parentID>
+    <defaultDashboard>DASHBOARD_USERS</defaultDashboard>
+    <queries>
+      <query>QUERY_USERS</query>
+    </queries>
+    <paramset><![CDATA[["PARAMSET_QUERY_LIMIT","PARAMSET_USERS"]]]></paramset>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="dataset" SXmlObjectID="DATASET_USER_BEHAVIOUR">
+    <repository>core</repository>
+    <parentID>user_behaviour</parentID>
+    <defaultDashboard>DASHBOARD_USER_BEHAVIOUR</defaultDashboard>
+    <queries>
+      <query>QUERY_USER_BEHAVIOUR</query>
+    </queries>
+    <paramset><![CDATA[["PARAMSET_QUERY_LIMIT","PARAMSET_USER_BEHAVIOUR"]]]></paramset>
+  </SXmlObject>
+</storm>

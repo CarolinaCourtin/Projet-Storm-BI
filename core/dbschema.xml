@@ -1,0 +1,7 @@
+<storm>
+  <SXmlObject SXmlObjectTYPE="dbschema" SXmlObjectSEQ="1" SXmlObjectID="DBSCHEMA">
+    <repository>core</repository>
+    <globalTables><![CDATA[["countries","products","users"]]]></globalTables>
+    <drilldown><![CDATA[["order_items","sales","user_behaviour"]]]></drilldown>
+  </SXmlObject>
+</storm>

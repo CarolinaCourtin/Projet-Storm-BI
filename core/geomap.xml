@@ -1,0 +1,13 @@
+<storm>
+  <SXmlObject SXmlObjectTYPE="geomap" SXmlObjectID="map_count_users">
+    <repository>core</repository>
+    <alias>Map number of users by countries</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <owner>storm</owner>
+    <country>COUNTRY_CODE</country>
+    <value>
+      <factor>USER_BEHAVIOUR_ID</factor>
+      <function>COUNT</function>
+    </value>
+  </SXmlObject>
+</storm>

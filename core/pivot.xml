@@ -1,0 +1,192 @@
+<storm>
+  <SXmlObject SXmlObjectTYPE="pivot" SXmlObjectSEQ="11" SXmlObjectID="pivot_sum_balance_by_countries_and_gender">
+    <repository>core</repository>
+    <alias>Balance and products solds by countries and gender</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <owner>storm</owner>
+    <rows>
+      <sort>total-down</sort>
+      <split>
+        <factor>COUNTRY_CODE</factor>
+      </split>
+    </rows>
+    <columns>
+      <split>
+        <factor>GENDER</factor>
+      </split>
+    </columns>
+    <value>
+      <factor>SUM_BALANCE</factor>
+    </value>
+    <value>
+      <factor>SUM_PRODUCTS_SOLD</factor>
+    </value>
+    <chart>
+      <enabled>true</enabled>
+      <mergeValueAxes>true</mergeValueAxes>
+      <d3d>true</d3d>
+    </chart>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="pivot" SXmlObjectSEQ="3" SXmlObjectID="PIVOT_sales_by_brands_and_clothing">
+    <repository>core</repository>
+    <alias>Sales by brand and type of clothing</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <owner>storm</owner>
+    <rows>
+      <sort>total-down</sort>
+      <split>
+        <factor>BRAND</factor>
+      </split>
+    </rows>
+    <columns>
+      <split>
+        <factor>PRODUCT_TYPE</factor>
+      </split>
+    </columns>
+    <value>
+      <factor>ID_SALE</factor>
+    </value>
+    <chart>
+      <enabled>true</enabled>
+      <type>column</type>
+    </chart>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="pivot" SXmlObjectSEQ="1" SXmlObjectID="PIVOT_SALES_BY_SEASONS">
+    <repository>core</repository>
+    <alias>Sales by seasons</alias>
+    <parentID>DATASET_SALES</parentID>
+    <owner>storm</owner>
+    <rows>
+      <sort>total-down</sort>
+      <split>
+        <factor>DATE_SALE_DATE_SEASON</factor>
+      </split>
+    </rows>
+    <columns/>
+    <value>
+      <factor>ID_SALE</factor>
+    </value>
+    <chart>
+      <enabled>true</enabled>
+      <type>pie</type>
+    </chart>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="pivot" SXmlObjectSEQ="1" SXmlObjectID="PIVOT_SALES_BY_USERS">
+    <repository>core</repository>
+    <alias>Sales by users</alias>
+    <parentID>DATASET_SALES</parentID>
+    <owner>storm</owner>
+    <rows>
+      <sort>total-down</sort>
+      <split>
+        <factor>USERNAME</factor>
+        <sort>abstotal-down</sort>
+      </split>
+    </rows>
+    <columns/>
+    <value>
+      <factor>ID_SALE</factor>
+      <function>COUNT</function>
+    </value>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="pivot" SXmlObjectSEQ="1" SXmlObjectID="PIVOT_COMMUNITY_BY_CONTINENTS">
+    <repository>core</repository>
+    <alias>Community by continents</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <owner>storm</owner>
+    <rows>
+      <sort>total-down</sort>
+      <split>
+        <factor>CONTINENT</factor>
+      </split>
+    </rows>
+    <columns/>
+    <value>
+      <factor>COMMUNITY</factor>
+    </value>
+    <chart>
+      <enabled>true</enabled>
+      <type>pie</type>
+    </chart>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="pivot" SXmlObjectSEQ="4" SXmlObjectID="PIVOT_PRODUCTS_TYPE">
+    <repository>core</repository>
+    <alias>Products type</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <owner>storm</owner>
+    <rows>
+      <sort>total-down</sort>
+      <split>
+        <factor>DATE_SALE_DATE_SEASON</factor>
+      </split>
+    </rows>
+    <columns>
+      <split>
+        <factor>PRODUCT_TYPE</factor>
+      </split>
+    </columns>
+    <value>
+      <factor>ID_ORDER_ITEM</factor>
+    </value>
+    <chart>
+      <enabled>true</enabled>
+      <type>packedbubble</type>
+      <legend>true</legend>
+    </chart>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="pivot" SXmlObjectSEQ="6" SXmlObjectID="PIVOT_ORDER_ITEMS_SYNC">
+    <repository>core</repository>
+    <alias>Syncronisation order items</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <owner>storm</owner>
+    <rows>
+      <sort>total-down</sort>
+      <split>
+        <factor>PRODUCT_TYPE</factor>
+      </split>
+      <split>
+        <factor>DATE_SALE_DATE_SEASON</factor>
+      </split>
+    </rows>
+    <columns>
+      <split>
+        <factor>BRAND</factor>
+      </split>
+    </columns>
+    <value>
+      <factor>ID_ORDER_ITEM</factor>
+    </value>
+    <chart>
+      <enabled>true</enabled>
+      <type>column</type>
+    </chart>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="pivot" SXmlObjectSEQ="1" SXmlObjectID="PIVOT_ORDER_ITEMS_AVG_SALES_BY_SEASON">
+    <repository>core</repository>
+    <alias>Average sales by season and year</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <owner>storm</owner>
+    <rows>
+      <sort>total-down</sort>
+      <split>
+        <factor>DATE_SALE_DATE_SEASON</factor>
+      </split>
+    </rows>
+    <columns>
+      <split>
+        <factor>DATE_SALE_DATE_YEAR</factor>
+      </split>
+    </columns>
+    <value>
+      <factor>ID_ORDER_ITEM</factor>
+      <enableChart>false</enableChart>
+    </value>
+    <value>
+      <factor>PRICE</factor>
+    </value>
+    <chart>
+      <enabled>true</enabled>
+      <type>column</type>
+    </chart>
+  </SXmlObject>
+</storm>

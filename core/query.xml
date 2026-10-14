@@ -1,0 +1,282 @@
+<storm>
+  <SXmlObject SXmlObjectTYPE="query" SXmlObjectID="QUERY_COUNTRIES">
+    <repository>core</repository>
+    <parentID>countries</parentID>
+    <defaultExpression>country_code, country_name, continent</defaultExpression>
+    <data>SELECT 
+-- {% if reduced %}
+countries.*
+${REPLACE_COUNTRIES_SELECT_REDUCED}
+--
+-- {% else %}
+countries.*
+${REPLACE_COUNTRIES_SELECT}
+--
+
+--
+-- {% endif %}
+--
+FROM `${SCHEMA}`.`countries` countries
+--
+
+--
+WHERE ${PARAMS}
+--
+AND ${CONTEXT}
+--
+LIMIT ${LIMIT}</data>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="query" SXmlObjectID="QUERY_COUNTRIES_GLOBALS">
+    <repository>core</repository>
+    <parentID>countries</parentID>
+    <glob>
+      <enabled>true</enabled>
+    </glob>
+    <defaultExpression>country_code, country_name, continent</defaultExpression>
+    <data>SELECT 
+-- {% if reduced %}
+countries.*
+${SELECT_REDUCED}
+--
+-- {% else %}
+countries.*
+--	, countries.`country_code`
+--	, countries.`country_name`
+--	, countries.`continent`
+--
+
+--
+-- {% endif %}
+--
+FROM `${SCHEMA}`.`countries` countries
+--
+
+--
+WHERE ${PARAMS}
+--
+AND ${CONTEXT}
+--
+LIMIT ${LIMIT}</data>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="query" SXmlObjectSEQ="6" SXmlObjectID="QUERY_ORDER_ITEMS">
+    <repository>core</repository>
+    <parentID>order_items</parentID>
+    <defaultExpression>id_sale
+// id_order_item, id_sale, product_id</defaultExpression>
+    <data>-- [list of duplicated columns below]
+-- id_sale [order_items,sales]
+-- product_id [order_items,products]
+
+
+SELECT 
+-- {% if reduced %}
+order_items.*
+${REPLACE_ORDER_ITEMS_SELECT_REDUCED}
+--
+-- {% else %}
+order_items.*
+${REPLACE_ORDER_ITEMS_SELECT}
+--
+${REPLACE_SALES_JOIN(sales)}
+${REPLACE_PRODUCTS_JOIN(products)}
+--
+-- {% endif %}
+--
+FROM `${SCHEMA}`.`order_items` order_items
+--
+LEFT JOIN `${SCHEMA}`.`sales` sales ON (order_items.`id_sale` = sales.`id_sale`)
+LEFT JOIN `${SCHEMA}`.`products` products ON (order_items.`product_id` = products.`product_id`)
+--
+WHERE ${PARAMS}
+--
+AND ${CONTEXT}
+--
+LIMIT ${LIMIT}</data>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="query" SXmlObjectID="QUERY_PRODUCTS">
+    <repository>core</repository>
+    <parentID>products</parentID>
+    <defaultExpression>price
+// product_id, product_type, price, brand</defaultExpression>
+    <data>SELECT 
+-- {% if reduced %}
+products.*
+${REPLACE_PRODUCTS_SELECT_REDUCED}
+--
+-- {% else %}
+products.*
+${REPLACE_PRODUCTS_SELECT}
+--
+
+--
+-- {% endif %}
+--
+FROM `${SCHEMA}`.`products` products
+--
+
+--
+WHERE ${PARAMS}
+--
+AND ${CONTEXT}
+--
+LIMIT ${LIMIT}</data>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="query" SXmlObjectID="QUERY_PRODUCTS_GLOBALS">
+    <repository>core</repository>
+    <parentID>products</parentID>
+    <glob>
+      <enabled>true</enabled>
+    </glob>
+    <defaultExpression>price
+// product_id, product_type, price, brand</defaultExpression>
+    <data>SELECT 
+-- {% if reduced %}
+products.*
+${SELECT_REDUCED}
+--
+-- {% else %}
+products.*
+--	, products.`product_id`
+--	, products.`product_type`
+--	, products.`price`
+--	, products.`brand`
+--
+
+--
+-- {% endif %}
+--
+FROM `${SCHEMA}`.`products` products
+--
+
+--
+WHERE ${PARAMS}
+--
+AND ${CONTEXT}
+--
+LIMIT ${LIMIT}</data>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="query" SXmlObjectSEQ="3" SXmlObjectID="QUERY_SALES">
+    <repository>core</repository>
+    <parentID>sales</parentID>
+    <defaultExpression>id_sale, date_sale, user_id</defaultExpression>
+    <data>-- [list of duplicated columns below]
+-- user_id [sales,users]
+
+
+SELECT 
+-- {% if reduced %}
+sales.*
+${REPLACE_SALES_SELECT_REDUCED}
+--
+-- {% else %}
+sales.*
+${REPLACE_SALES_SELECT}
+--
+${REPLACE_USERS_JOIN(users)}
+--
+-- {% endif %}
+--
+FROM `${SCHEMA}`.`sales` sales
+--
+ LEFT JOIN `${SCHEMA}`.`users` users ON (sales.`user_id` = users.`user_id`)
+--
+WHERE ${PARAMS}
+--
+AND ${CONTEXT}
+--
+LIMIT ${LIMIT}</data>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="query" SXmlObjectID="QUERY_USERS">
+    <repository>core</repository>
+    <parentID>users</parentID>
+    <defaultExpression>user_id, username</defaultExpression>
+    <data>SELECT 
+-- {% if reduced %}
+users.*
+${REPLACE_USERS_SELECT_REDUCED}
+--
+-- {% else %}
+users.*
+${REPLACE_USERS_SELECT}
+--
+
+--
+-- {% endif %}
+--
+FROM `${SCHEMA}`.`users` users
+--
+
+--
+WHERE ${PARAMS}
+--
+AND ${CONTEXT}
+--
+LIMIT ${LIMIT}</data>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="query" SXmlObjectID="QUERY_USERS_GLOBALS">
+    <repository>core</repository>
+    <parentID>users</parentID>
+    <glob>
+      <enabled>true</enabled>
+    </glob>
+    <defaultExpression>user_id, username</defaultExpression>
+    <data>SELECT 
+-- {% if reduced %}
+users.*
+${SELECT_REDUCED}
+--
+-- {% else %}
+users.*
+--	, users.`user_id`
+--	, users.`username`
+--
+
+--
+-- {% endif %}
+--
+FROM `${SCHEMA}`.`users` users
+--
+
+--
+WHERE ${PARAMS}
+--
+AND ${CONTEXT}
+--
+LIMIT ${LIMIT}</data>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="query" SXmlObjectSEQ="3" SXmlObjectID="QUERY_USER_BEHAVIOUR">
+    <repository>core</repository>
+    <parentID>user_behaviour</parentID>
+    <defaultExpression>country_code
+// user_behaviour_id, user_id, country_code, gender, followers, followss, products_list, products_sold, balance</defaultExpression>
+    <data>-- [list of duplicated columns below]
+-- country_code [user_behaviour,countries]
+-- user_id [user_behaviour,users]
+
+
+SELECT 
+-- {% if reduced %}
+user_behaviour.*
+${REPLACE_USER_BEHAVIOUR_SELECT_REDUCED}
+--
+-- {% else %}
+user_behaviour.*
+${REPLACE_USER_BEHAVIOUR_SELECT}
+--
+${REPLACE_COUNTRIES_JOIN(countries)}
+${REPLACE_USERS_JOIN(users)}
+--
+-- {% endif %}
+--
+FROM `${SCHEMA}`.`user_behaviour` user_behaviour
+--
+LEFT JOIN `${SCHEMA}`.`countries` countries ON (user_behaviour.`country_code` = countries.`country_code`)
+LEFT JOIN `${SCHEMA}`.`users` users ON (user_behaviour.`user_id` = users.`user_id`)
+--
+WHERE ${PARAMS}
+--
+AND ${CONTEXT}
+--
+LIMIT ${LIMIT}</data>
+  </SXmlObject>
+</storm>

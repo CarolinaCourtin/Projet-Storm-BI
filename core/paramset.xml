@@ -1,0 +1,336 @@
+<storm>
+  <SXmlObject SXmlObjectTYPE="paramset" SXmlObjectID="PARAMSET_COUNTRIES">
+    <repository>core</repository>
+    <alias>Countries</alias>
+    <parentID>DATASET_COUNTRIES</parentID>
+    <param>
+      <bind>countries.`country_code`</bind>
+      <type>string</type>
+      <list enabled="true">
+        <query>SELECT DISTINCT
+`country_code`
+FROM `${SCHEMA}`.`countries` countries
+ORDER BY `country_code` LIMIT 30000</query>
+        <columnset>COUNTRY_CODE</columnset>
+        <factor>country_code</factor>
+      </list>
+    </param>
+    <param>
+      <bind>countries.`country_name`</bind>
+      <type>text</type>
+      <list>
+        <query>SELECT DISTINCT
+`country_name`
+FROM `${SCHEMA}`.`countries` countries
+ORDER BY `country_name` LIMIT 30000</query>
+        <columnset>COUNTRY_NAME</columnset>
+        <factor>country_name</factor>
+      </list>
+    </param>
+    <param>
+      <bind>countries.`continent`</bind>
+      <type>text</type>
+      <list>
+        <query>SELECT DISTINCT
+`continent`
+FROM `${SCHEMA}`.`countries` countries
+ORDER BY `continent` LIMIT 30000</query>
+        <columnset>CONTINENT</columnset>
+        <factor>continent</factor>
+      </list>
+    </param>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="paramset" SXmlObjectID="PARAMSET_ORDER_ITEMS">
+    <repository>core</repository>
+    <alias>Order items</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <param>
+      <bind>order_items.`id_order_item`</bind>
+      <type>string</type>
+      <list enabled="true">
+        <query>SELECT DISTINCT
+`id_order_item`
+FROM `${SCHEMA}`.`order_items` order_items
+ORDER BY `id_order_item` LIMIT 30000</query>
+        <columnset>ID_ORDER_ITEM</columnset>
+        <factor>id_order_item</factor>
+      </list>
+    </param>
+    <param>
+      <bind>order_items.`id_sale`</bind>
+      <type>string</type>
+      <list enabled="true">
+        <query>SELECT DISTINCT
+`id_sale`
+FROM `${SCHEMA}`.`order_items` order_items
+ORDER BY `id_sale` LIMIT 30000</query>
+        <columnset>ID_SALE</columnset>
+        <factor>id_sale</factor>
+      </list>
+    </param>
+    <param>
+      <bind>order_items.`product_id`</bind>
+      <type>integer</type>
+      <list enabled="true">
+        <query>SELECT DISTINCT
+`product_id`
+FROM `${SCHEMA}`.`order_items` order_items
+ORDER BY `product_id` LIMIT 30000</query>
+        <columnset><![CDATA[["PRODUCT_ID","PRODUCT_ID_PTR_PRODUCTS"]]]></columnset>
+        <factor>product_id</factor>
+      </list>
+    </param>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="paramset" SXmlObjectID="PARAMSET_PRODUCTS">
+    <repository>core</repository>
+    <alias>Products</alias>
+    <parentID>DATASET_PRODUCTS</parentID>
+    <param>
+      <bind>products.`product_id`</bind>
+      <type>integer</type>
+      <list>
+        <query>SELECT DISTINCT
+`product_id`
+FROM `${SCHEMA}`.`products` products
+ORDER BY `product_id` LIMIT 30000</query>
+        <columnset>PRODUCT_ID</columnset>
+        <factor>product_id</factor>
+      </list>
+    </param>
+    <param>
+      <bind>products.`product_type`</bind>
+      <type>text</type>
+      <list>
+        <query>SELECT DISTINCT
+`product_type`
+FROM `${SCHEMA}`.`products` products
+ORDER BY `product_type` LIMIT 30000</query>
+        <columnset>PRODUCT_TYPE</columnset>
+        <factor>product_type</factor>
+      </list>
+    </param>
+    <param>
+      <bind>products.`price`</bind>
+      <type>string</type>
+      <list enabled="true">
+        <query>SELECT DISTINCT
+`price`
+FROM `${SCHEMA}`.`products` products
+ORDER BY `price` LIMIT 30000</query>
+        <columnset>PRICE</columnset>
+        <factor>price</factor>
+      </list>
+    </param>
+    <param>
+      <bind>products.`brand`</bind>
+      <type>text</type>
+      <list>
+        <query>SELECT DISTINCT
+`brand`
+FROM `${SCHEMA}`.`products` products
+ORDER BY `brand` LIMIT 30000</query>
+        <columnset>BRAND</columnset>
+        <factor>brand</factor>
+      </list>
+    </param>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="paramset" SXmlObjectID="PARAMSET_QUERY_LIMIT">
+    <repository>core</repository>
+    <param>
+      <bind>${LIMIT}</bind>
+      <type>integer</type>
+      <icon>fa/stop-circle/regular</icon>
+      <alias>Query limit</alias>
+      <flags>
+        <show>true</show>
+        <escaped>false</escaped>
+        <mandatory>true</mandatory>
+        <enableOperators>false</enableOperators>
+      </flags>
+      <defaultValue>3000</defaultValue>
+    </param>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="paramset" SXmlObjectID="PARAMSET_SALES">
+    <repository>core</repository>
+    <alias>Sales</alias>
+    <parentID>DATASET_SALES</parentID>
+    <param>
+      <bind>sales.`id_sale`</bind>
+      <type>string</type>
+      <list enabled="true">
+        <query>SELECT DISTINCT
+`id_sale`
+FROM `${SCHEMA}`.`sales` sales
+ORDER BY `id_sale` LIMIT 30000</query>
+        <columnset>ID_SALE</columnset>
+        <factor>id_sale</factor>
+      </list>
+    </param>
+    <param>
+      <bind>sales.`date_sale`</bind>
+      <type>date</type>
+      <list>
+        <query>SELECT DISTINCT
+`date_sale`
+FROM `${SCHEMA}`.`sales` sales
+ORDER BY `date_sale` LIMIT 30000</query>
+        <columnset>DATE_SALE</columnset>
+        <factor>date_sale</factor>
+      </list>
+    </param>
+    <param>
+      <bind>sales.`user_id`</bind>
+      <type>integer</type>
+      <list enabled="true">
+        <query>SELECT DISTINCT
+`user_id`
+FROM `${SCHEMA}`.`sales` sales
+ORDER BY `user_id` LIMIT 30000</query>
+        <columnset><![CDATA[["USER_ID","USER_ID_PTR_USERS"]]]></columnset>
+        <factor>user_id</factor>
+      </list>
+    </param>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="paramset" SXmlObjectID="PARAMSET_USERS">
+    <repository>core</repository>
+    <alias>Users</alias>
+    <parentID>DATASET_USERS</parentID>
+    <param>
+      <bind>users.`user_id`</bind>
+      <type>integer</type>
+      <list>
+        <query>SELECT DISTINCT
+`user_id`
+FROM `${SCHEMA}`.`users` users
+ORDER BY `user_id` LIMIT 30000</query>
+        <columnset>USER_ID</columnset>
+        <factor>user_id</factor>
+      </list>
+    </param>
+    <param>
+      <bind>users.`username`</bind>
+      <type>text</type>
+      <list>
+        <query>SELECT DISTINCT
+`username`
+FROM `${SCHEMA}`.`users` users
+ORDER BY `username` LIMIT 30000</query>
+        <columnset>USERNAME</columnset>
+        <factor>username</factor>
+      </list>
+    </param>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="paramset" SXmlObjectID="PARAMSET_USER_BEHAVIOUR">
+    <repository>core</repository>
+    <alias>User behaviour</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <param>
+      <bind>user_behaviour.`user_behaviour_id`</bind>
+      <type>string</type>
+      <list enabled="true">
+        <query>SELECT DISTINCT
+`user_behaviour_id`
+FROM `${SCHEMA}`.`user_behaviour` user_behaviour
+ORDER BY `user_behaviour_id` LIMIT 30000</query>
+        <columnset>USER_BEHAVIOUR_ID</columnset>
+        <factor>user_behaviour_id</factor>
+      </list>
+    </param>
+    <param>
+      <bind>user_behaviour.`user_id`</bind>
+      <type>integer</type>
+      <list enabled="true">
+        <query>SELECT DISTINCT
+`user_id`
+FROM `${SCHEMA}`.`user_behaviour` user_behaviour
+ORDER BY `user_id` LIMIT 30000</query>
+        <columnset><![CDATA[["USER_ID","USER_ID_PTR_USERS"]]]></columnset>
+        <factor>user_id</factor>
+      </list>
+    </param>
+    <param>
+      <bind>user_behaviour.`country_code`</bind>
+      <type>string</type>
+      <list enabled="true">
+        <query>SELECT DISTINCT
+`country_code`
+FROM `${SCHEMA}`.`user_behaviour` user_behaviour
+ORDER BY `country_code` LIMIT 30000</query>
+        <columnset><![CDATA[["COUNTRY_CODE","COUNTRY_CODE_PTR_COUNTRIES"]]]></columnset>
+        <factor>country_code</factor>
+      </list>
+    </param>
+    <param>
+      <bind>user_behaviour.`gender`</bind>
+      <type>text</type>
+      <list>
+        <query>SELECT DISTINCT
+`gender`
+FROM `${SCHEMA}`.`user_behaviour` user_behaviour
+ORDER BY `gender` LIMIT 30000</query>
+        <columnset>GENDER</columnset>
+        <factor>gender</factor>
+      </list>
+    </param>
+    <param>
+      <bind>user_behaviour.`followers`</bind>
+      <type>integer</type>
+      <list>
+        <query>SELECT DISTINCT
+`followers`
+FROM `${SCHEMA}`.`user_behaviour` user_behaviour
+ORDER BY `followers` LIMIT 30000</query>
+        <columnset>FOLLOWERS</columnset>
+        <factor>followers</factor>
+      </list>
+    </param>
+    <param>
+      <bind>user_behaviour.`followss`</bind>
+      <type>integer</type>
+      <list>
+        <query>SELECT DISTINCT
+`followss`
+FROM `${SCHEMA}`.`user_behaviour` user_behaviour
+ORDER BY `followss` LIMIT 30000</query>
+        <columnset>FOLLOWSS</columnset>
+        <factor>followss</factor>
+      </list>
+    </param>
+    <param>
+      <bind>user_behaviour.`products_list`</bind>
+      <type>integer</type>
+      <list>
+        <query>SELECT DISTINCT
+`products_list`
+FROM `${SCHEMA}`.`user_behaviour` user_behaviour
+ORDER BY `products_list` LIMIT 30000</query>
+        <columnset>PRODUCTS_LIST</columnset>
+        <factor>products_list</factor>
+      </list>
+    </param>
+    <param>
+      <bind>user_behaviour.`products_sold`</bind>
+      <type>integer</type>
+      <list>
+        <query>SELECT DISTINCT
+`products_sold`
+FROM `${SCHEMA}`.`user_behaviour` user_behaviour
+ORDER BY `products_sold` LIMIT 30000</query>
+        <columnset>PRODUCTS_SOLD</columnset>
+        <factor>products_sold</factor>
+      </list>
+    </param>
+    <param>
+      <bind>user_behaviour.`balance`</bind>
+      <type>float</type>
+      <list>
+        <query>SELECT DISTINCT
+`balance`
+FROM `${SCHEMA}`.`user_behaviour` user_behaviour
+ORDER BY `balance` LIMIT 30000</query>
+        <columnset>BALANCE</columnset>
+        <factor>balance</factor>
+      </list>
+    </param>
+  </SXmlObject>
+</storm>

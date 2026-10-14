@@ -1,0 +1,414 @@
+<storm>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="7" SXmlObjectID="BALANCE">
+    <repository>core</repository>
+    <alias>Balance</alias>
+    <domain>user_behaviour</domain>
+    <parentID>balance</parentID>
+    <expression>balance</expression>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="7" SXmlObjectID="BRAND">
+    <repository>core</repository>
+    <alias>Brand</alias>
+    <domain>products</domain>
+    <parentID>brand</parentID>
+    <expression>brand</expression>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectID="CONTINENT">
+    <repository>core</repository>
+    <alias>Continent</alias>
+    <domain>countries</domain>
+    <parentID>continent</parentID>
+    <expression>continent</expression>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="8" SXmlObjectID="COUNTRY_CODE">
+    <repository>core</repository>
+    <alias>Country code</alias>
+    <parentID>country_code</parentID>
+    <description>countries user_behaviour</description>
+    <expression>country_code</expression>
+    <options>
+      <style>STYLE_PK</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="8" SXmlObjectID="COUNTRY_CODE_PTR_COUNTRIES">
+    <repository>core</repository>
+    <alias><![CDATA[Country code -> Countries]]></alias>
+    <parentID>country_code</parentID>
+    <description><![CDATA[user_behaviour(country_code) -> countries(country_code)]]></description>
+    <expression>country_code, country_name, continent</expression>
+    <totalFunction>COUNT_DISTINCT</totalFunction>
+    <pointer enabled="true">
+      <datasource>QUERY_COUNTRIES_GLOBALS</datasource>
+      <link>country_code:country_code</link>
+    </pointer>
+    <options>
+      <style>STYLE_POINTER</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectID="COUNTRY_NAME">
+    <repository>core</repository>
+    <alias>Country name</alias>
+    <domain>countries</domain>
+    <parentID>country_name</parentID>
+    <expression>country_name</expression>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="1" SXmlObjectID="DATE_SALE">
+    <repository>core</repository>
+    <alias>Date sale</alias>
+    <domain>sales</domain>
+    <parentID>date_sale</parentID>
+    <expression>date_sale</expression>
+    <totalFunction>MAX</totalFunction>
+    <options>
+      <style>STYLE_DATETIME</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectID="DATE_SALE_DATE_DAY_OF_WEEK">
+    <repository>core</repository>
+    <alias>Date saledate_yeardate_year_monthdate_year_seasondate_seasondate_year_quarterdate_quarterdate_monthdate_day_of_week</alias>
+    <domain>sales</domain>
+    <parentID>date_sale</parentID>
+    <type>date_day_of_week</type>
+    <expression>date_sale</expression>
+    <options>
+      <style>STYLE_DATETIME</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectID="DATE_SALE_DATE_MONTH">
+    <repository>core</repository>
+    <alias>Date saledate_yeardate_year_monthdate_year_seasondate_seasondate_year_quarterdate_quarterdate_month</alias>
+    <domain>sales</domain>
+    <parentID>date_sale</parentID>
+    <type>date_month</type>
+    <expression>date_sale</expression>
+    <options>
+      <style>STYLE_DATETIME</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectID="DATE_SALE_DATE_QUARTER">
+    <repository>core</repository>
+    <alias>Date saledate_yeardate_year_monthdate_year_seasondate_seasondate_year_quarterdate_quarter</alias>
+    <domain>sales</domain>
+    <parentID>date_sale</parentID>
+    <type>date_quarter</type>
+    <expression>date_sale</expression>
+    <options>
+      <style>STYLE_DATETIME</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectID="DATE_SALE_DATE_SEASON">
+    <repository>core</repository>
+    <alias>Date saledate_yeardate_year_monthdate_year_seasondate_season</alias>
+    <domain>sales</domain>
+    <parentID>date_sale</parentID>
+    <type>date_season</type>
+    <expression>date_sale</expression>
+    <options>
+      <style>STYLE_DATETIME</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectID="DATE_SALE_DATE_YEAR">
+    <repository>core</repository>
+    <alias>Date saledate_year</alias>
+    <domain>sales</domain>
+    <parentID>date_sale</parentID>
+    <type>date_year</type>
+    <expression>date_sale</expression>
+    <options>
+      <style>STYLE_DATETIME</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectID="DATE_SALE_DATE_YEAR_MONTH">
+    <repository>core</repository>
+    <alias>Date saledate_yeardate_year_month</alias>
+    <domain>sales</domain>
+    <parentID>date_sale</parentID>
+    <type>date_year_month</type>
+    <expression>date_sale</expression>
+    <options>
+      <style>STYLE_DATETIME</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectID="DATE_SALE_DATE_YEAR_QUARTER">
+    <repository>core</repository>
+    <alias>Date saledate_yeardate_year_monthdate_year_seasondate_seasondate_year_quarter</alias>
+    <domain>sales</domain>
+    <parentID>date_sale</parentID>
+    <type>date_year_quarter</type>
+    <expression>date_sale</expression>
+    <options>
+      <style>STYLE_DATETIME</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectID="DATE_SALE_DATE_YEAR_SEASON">
+    <repository>core</repository>
+    <alias>Date saledate_yeardate_year_monthdate_year_season</alias>
+    <domain>sales</domain>
+    <parentID>date_sale</parentID>
+    <type>date_year_season</type>
+    <expression>date_sale</expression>
+    <options>
+      <style>STYLE_DATETIME</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="16" SXmlObjectID="FOLLOWERS">
+    <repository>core</repository>
+    <alias>Followers</alias>
+    <domain>user_behaviour</domain>
+    <parentID>followers</parentID>
+    <expression>followers</expression>
+    <options>
+      <style>STYLE_INTEGER</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="9" SXmlObjectID="FOLLOWSS">
+    <repository>core</repository>
+    <alias>Followss</alias>
+    <domain>user_behaviour</domain>
+    <parentID>followss</parentID>
+    <expression>followss</expression>
+    <options>
+      <style>STYLE_INTEGER</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="2" SXmlObjectID="GENDER">
+    <repository>core</repository>
+    <alias>Gender</alias>
+    <domain>user_behaviour</domain>
+    <parentID>gender</parentID>
+    <expression>gender</expression>
+    <totalFunction>COUNT_DISTINCT</totalFunction>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="5" SXmlObjectID="ID_ORDER_ITEM">
+    <repository>core</repository>
+    <alias>Id order item</alias>
+    <domain>order_items</domain>
+    <parentID>id_order_item</parentID>
+    <expression>id_order_item</expression>
+    <totalFunction>COUNT</totalFunction>
+    <options>
+      <style>STYLE_PK</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="4" SXmlObjectID="ID_SALE">
+    <repository>core</repository>
+    <alias>Id sale</alias>
+    <parentID>id_sale</parentID>
+    <description>order_items sales</description>
+    <expression>id_sale</expression>
+    <totalFunction>COUNT</totalFunction>
+    <options>
+      <style>STYLE_PK</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="13" SXmlObjectID="PRICE">
+    <repository>core</repository>
+    <alias>Price</alias>
+    <domain>products</domain>
+    <parentID>price</parentID>
+    <totalFunction>SUM</totalFunction>
+    <options>
+      <style>STYLE_STRING</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="3" SXmlObjectID="PRODUCTS_LIST">
+    <repository>core</repository>
+    <alias>Products list</alias>
+    <domain>user_behaviour</domain>
+    <parentID>products_list</parentID>
+    <expression>products_list</expression>
+    <options>
+      <style>STYLE_INTEGER</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="4" SXmlObjectID="PRODUCTS_SOLD">
+    <repository>core</repository>
+    <alias>Products sold</alias>
+    <domain>user_behaviour</domain>
+    <parentID>products_sold</parentID>
+    <expression>products_sold</expression>
+    <options>
+      <style>STYLE_INTEGER</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="1" SXmlObjectID="PRODUCT_ID">
+    <repository>core</repository>
+    <alias>Product id</alias>
+    <parentID>product_id</parentID>
+    <description>order_items products</description>
+    <expression>product_id</expression>
+    <totalFunction>COUNT</totalFunction>
+    <options>
+      <style>STYLE_PK</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="2" SXmlObjectID="PRODUCT_ID_PTR_PRODUCTS">
+    <repository>core</repository>
+    <alias><![CDATA[Product id -> Products]]></alias>
+    <parentID>product_id</parentID>
+    <description><![CDATA[order_items(product_id) -> products(product_id)]]></description>
+    <expression>//price, product_type, price, brand
+// product_id, product_type, price, brand</expression>
+    <pointer enabled="true">
+      <datasource>QUERY_PRODUCTS_GLOBALS</datasource>
+      <link>product_id:product_id</link>
+    </pointer>
+    <options>
+      <style>STYLE_POINTER</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectID="PRODUCT_TYPE">
+    <repository>core</repository>
+    <alias>Product type</alias>
+    <domain>products</domain>
+    <parentID>product_type</parentID>
+    <expression>product_type</expression>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectID="USERNAME">
+    <repository>core</repository>
+    <alias>Username</alias>
+    <domain>users</domain>
+    <parentID>username</parentID>
+    <expression>username</expression>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectID="USER_BEHAVIOUR_ID">
+    <repository>core</repository>
+    <alias>User behaviour id</alias>
+    <domain>user_behaviour</domain>
+    <parentID>user_behaviour_id</parentID>
+    <expression>user_behaviour_id</expression>
+    <options>
+      <style>STYLE_PK</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectID="USER_ID">
+    <repository>core</repository>
+    <alias>User id</alias>
+    <parentID>user_id</parentID>
+    <description>sales user_behaviour users</description>
+    <expression>user_id</expression>
+    <options>
+      <style>STYLE_PK</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectID="USER_ID_PTR_USERS">
+    <repository>core</repository>
+    <alias><![CDATA[User id -> Users]]></alias>
+    <parentID>user_id</parentID>
+    <description><![CDATA[user_behaviour(user_id) -> users(user_id)]]></description>
+    <expression>user_id, username</expression>
+    <pointer enabled="true">
+      <datasource>QUERY_USERS_GLOBALS</datasource>
+      <link>user_id:user_id</link>
+    </pointer>
+    <options>
+      <style>STYLE_POINTER</style>
+    </options>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectID="BALANCE_avg">
+    <repository>core</repository>
+    <alias>Balance average</alias>
+    <domain>user_behaviour</domain>
+    <parentID>balance</parentID>
+    <owner>storm</owner>
+    <expression>balance_avg</expression>
+    <totalFunction>AVG</totalFunction>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectID="list_max_followers_by_countries">
+    <repository>core</repository>
+    <alias>Max followers by countries</alias>
+    <owner>storm</owner>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="38" SXmlObjectID="COMMUNITY">
+    <repository>core</repository>
+    <alias>Community</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <owner>storm</owner>
+    <expression>=${FOLLOWERS} +${FOLLOWSS}</expression>
+    <totalFunction>SUM</totalFunction>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="1" SXmlObjectID="PRODUCTS_LIST_AVG">
+    <repository>core</repository>
+    <alias>AVG Products list</alias>
+    <parentID>products_list</parentID>
+    <owner>storm</owner>
+    <expression>PRODUCTS_LIST</expression>
+    <totalFunction>AVG</totalFunction>
+    <pointer>
+      <datasource>PRODUCTS_LIST</datasource>
+    </pointer>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectID="etsttavg">
+    <repository>core</repository>
+    <alias>AVG TEST</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <owner>storm</owner>
+    <expression>PRODUCTS_LIST</expression>
+    <totalFunction>AVG</totalFunction>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="1" SXmlObjectID="AVG_FOLLOWERS">
+    <repository>core</repository>
+    <alias>Average followers</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <owner>storm</owner>
+    <expression>FOLLOWERS</expression>
+    <totalFunction>AVG</totalFunction>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="1" SXmlObjectID="AVG_FOLLOWSS">
+    <repository>core</repository>
+    <alias>AVG Followss</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <owner>storm</owner>
+    <expression>FOLLOWSS</expression>
+    <totalFunction>AVG</totalFunction>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="1" SXmlObjectID="SUM_BALANCE">
+    <repository>core</repository>
+    <alias>Sum balance</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <owner>storm</owner>
+    <expression>BALANCE</expression>
+    <totalFunction>SUM</totalFunction>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectID="USER_BEHAVIOUR">
+    <repository>core</repository>
+    <alias>User behaviour</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <owner>storm</owner>
+    <expression>PRODUCTS_SOLD</expression>
+    <totalFunction>SUM</totalFunction>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="1" SXmlObjectID="SUM_PRODUCTS_SOLD">
+    <repository>core</repository>
+    <alias>Sum products sold</alias>
+    <parentID>DATASET_USER_BEHAVIOUR</parentID>
+    <owner>storm</owner>
+    <expression>PRODUCTS_SOLD</expression>
+    <totalFunction>SUM</totalFunction>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="24" SXmlObjectID="PRICE_WITH_DELIVERY_FEES">
+    <repository>core</repository>
+    <alias>Price with del fees</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <owner>storm</owner>
+    <type>number</type>
+    <expression>= ${PRICE}*0.10</expression>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="1" SXmlObjectID="FEES">
+    <repository>core</repository>
+    <alias>Fee</alias>
+    <parentID>DATASET_ORDER_ITEMS</parentID>
+    <owner>storm</owner>
+    <type>number</type>
+    <expression>= ${PRICE}*0.10</expression>
+    <totalFunction>SUM</totalFunction>
+  </SXmlObject>
+  <SXmlObject SXmlObjectTYPE="factor" SXmlObjectSEQ="1" SXmlObjectID="PRICE_SUM">
+    <repository>core</repository>
+    <alias>Price sum</alias>
+    <parentID>price</parentID>
+    <owner>storm</owner>
+    <expression>PRICE</expression>
+    <totalFunction>SUM</totalFunction>
+  </SXmlObject>
+</storm>
