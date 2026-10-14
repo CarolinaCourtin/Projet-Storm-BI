@@ -1,6 +1,7 @@
 # Tableaux de bord e-commerce avec Storm BI
 
 Projet de business intelligence réalisé avec le logiciel [Storm](https://www.stormcorp.ch/). Il porte sur les données d'une boutique de mode en ligne fictive : clients, produits, ventes et activité des utilisateurs sur le site. Le projet inclut d'abord une modélisation des données dans une base MySQL, puis une analyse de ces données dans Storm à travers trois tableaux de bord interactifs.
+Le projet a été réalisé dans le cadre du cours Systèmes d'Information d'Entreprise au semestre de printemps 2024. 
 
 ![Schéma de la base de données](DB_Finale_Schema.png)
 
